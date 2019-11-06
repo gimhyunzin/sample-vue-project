@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import axios from 'axios'
+import router from './routes'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.less'
 import { DatePicker, Switch, Layout, Menu, Breadcrumb, Card, Checkbox, Cascader, Input, Form, Icon, Drawer, Avatar, Alert, Calendar, Button, AutoComplete, Badge, Dropdown, Affix, Divider } from 'ant-design-vue'
 
-import Default from "./components/layout/Default";
-import Blank from "./components/layout/Blank";
-import Error from "./components/layout/Error";
+import Base from "./views/layouts/Base";
+import Blank from "./views/layouts/Blank";
+import Error from "./views/layouts/Error";
 
 Vue.use(Antd);
 Vue.use(Layout);
@@ -32,13 +33,14 @@ Vue.use(Badge);
 Vue.use(Dropdown);
 Vue.use(Divider);
 
-Vue.component('error-layout', Error);
+Vue.component('base-layout', Base);
 Vue.component('blank-layout', Blank);
-Vue.component('default-layout', Default);
+Vue.component('error-layout', Error);
 
+Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   render: h => h(App),
-}).$mount("#app")
+}).$mount("#app");

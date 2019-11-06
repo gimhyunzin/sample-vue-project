@@ -98,13 +98,18 @@
         },
     ];
 
-    import Drawer from "./items/Drawer";
-    import Modal from "./items/Modal";
-    import Table from "./items/Table";
+    import Drawer from "../components/Drawer";
+    import Modal from "../components/Modal";
+    import Table from "../components/Table";
 
     export default {
-        name: 'MngMenu',
+        name: 'Admin',
         components: {Drawer, Modal, Table},
+        methods: {
+            onChange () {
+
+            }
+        },
         data() {
             return {
                 data,

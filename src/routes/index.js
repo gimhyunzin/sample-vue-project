@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
-import Home from '../components/Home'
-import Admin from '../components/Admin'
-import Login from '../components/Login'
-import Calendar from '../components/Calendar'
+import Home from '../views/Home'
+import Admin from '../views/Admin'
+import Login from '../views/Login'
+import Calendar from '../views/Calendar'
 
 Vue.use(VueRouter);
 
@@ -20,8 +20,14 @@ const vueRouter = new VueRouter({
     },
     { path: '/', component: Home,
       meta: {
-        layout: 'default'
-      }},
+        layout: 'base'
+      }
+    },
+    { path: '/home', component: Home,
+      meta: {
+        layout: 'base'
+      }
+    },
     { path: '/admin', component: Admin },
     { path: '/calendar', component: Calendar },
     { path: '*', component: NotFound,
@@ -30,6 +36,6 @@ const vueRouter = new VueRouter({
       }
     }
   ]
-})
+});
 
 export default vueRouter

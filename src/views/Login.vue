@@ -40,6 +40,12 @@
         methods: {
             handleSubmit(e) {
                 e.preventDefault();
+
+                this.$http.get('https://jsonplaceholder.typicode.com/posts')
+                    .then((r) => {
+                        console.log(r);
+                    });
+
                 this.form.validateFields((err, values) => {
                     if (!err) {
                         console.log('Received values of form: ', values);
