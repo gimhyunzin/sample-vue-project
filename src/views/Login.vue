@@ -65,7 +65,7 @@
   }
   .login-container {
     margin: auto;
-    width: 2145px;
+    width: 300px;
     text-align: center;
   }
   .login-container .login-form {
