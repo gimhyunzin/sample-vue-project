@@ -14,9 +14,9 @@
 </template>
 
 <script>
-    import Header from './templates/Header'
-    import Footer from "./templates/Footer";
-    import Body from "./templates/Body";
+    import Header from './fragment/Header'
+    import Footer from "./fragment/Footer";
+    import Body from "./fragment/Body";
 
     export default {
         components: {Body, Header, Footer},
